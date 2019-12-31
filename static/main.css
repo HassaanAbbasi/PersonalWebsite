@@ -21,6 +21,7 @@ html {
 			 blink-caret .75s step-end infinite;
 }
 
+
 @keyframes typing{
   from {max-width: 0}
   to {max-width: 100%}

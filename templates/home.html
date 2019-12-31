@@ -64,8 +64,127 @@
             right: 0;
         }
 
-        .myClickable {
+        .grow:hover {
+            -webkit-transform: scale(1.3);
+            -ms-transform: scale(1.3);
+            transform: scale(1.3);
+            -webkit-transition: 2s height ease;
+            transition: 0.5s;
+        }
+
+        .button1 {
+            position: relative;
+            background-color: royalblue;
+            border: none;
+            font-size: 15px;
+            color: #FFFFFF;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            -webkit-transition-duration: 0.4s;
+            /* Safari */
+            transition-duration: 0.4s;
+            text-decoration: none;
+            overflow: hidden;
             cursor: pointer;
+        }
+
+        .button1:after {
+            content: "";
+            background: royalblue;
+            display: block;
+            position: absolute;
+            padding-top: 300%;
+            padding-left: 350%;
+            margin-left: -30px !important;
+            margin-top: -120%;
+            opacity: 0;
+            transition: all 1.3s
+        }
+
+        .button1:active:after {
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            transition: 0s
+        }
+
+        .icon-bar {
+            position: fixed;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        .icon-bar a {
+            display: block;
+            text-align: center;
+            padding: 16px;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 20px;
+        }
+
+        .icon-bar a:hover {
+            background-color: #000;
+        }
+
+        .github {
+            background: slategrey;
+            color: white;
+        }
+
+        .linkedin {
+            background: #007bb5;
+            color: white;
+        }
+
+        .mail {
+            background: crimson;
+            color: white;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .image {
+            display: block;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: royalblue;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+            transform: scale(0);
+            -webkit-transition: .3s ease;
+            transition: .3s ease;
+        }
+
+        .container:hover .overlay {
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1);
+        }
+
+        .text {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
         }
     </style>
 </head>
@@ -75,36 +194,54 @@
     <!-- Navbar -->
     <div class="w3-top">
         <div class="w3-bar w3-black w3-card">
-            <a href="#" class="w3-bar-item w3-button w3-padding-large">Home</a>
-            <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">About</a>
-            <a href="#project" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Projects</a>
-            <a href="#resume" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Resume</a>
-            <a href="#connect" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
+            <a href="#"
+                class="w3-bar-item w3-button w3-padding-large button1 w3-hover-white w3-hover-text-blue">Home</a>
+            <a href="#about"
+                class="w3-bar-item w3-button w3-padding-large w3-hide-small button1 w3-hover-white w3-hover-text-blue">About</a>
+            <a href="#project"
+                class="w3-bar-item w3-button w3-padding-large w3-hide-small button1 w3-hover-white w3-hover-text-blue">Projects</a>
+            <a href="#resume"
+                class="w3-bar-item w3-button w3-padding-large w3-hide-small button1 w3-hover-white w3-hover-text-blue">Resume</a>
+            <a href="#connect"
+                class="w3-bar-item w3-button w3-padding-large w3-hide-small button1 w3-hover-white w3-hover-text-blue">Contact</a>
+            <div class="container" style="float: right;">
+                <img class="image" src="{{ url_for('static', filename='favicon.png.ico') }}" alt=""
+                    style="background-color: white;" height="46" width="46">
+                <div class="overlay">
+                    <div class="text" style="size: 10mm;">👋</div>
+                </div>
+            </div>
+
         </div>
+    </div>
+
+    <div class="icon-bar">
+        <a href="https://github.com/HassaanAbbasi" class="github" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/hassaan-abbasi/" class="linkedin" target="_blank"><i
+                class="fab fa-linkedin"></i></a>
+        <a href="mailto:hassaan.abbasi@ryerson.ca" class="mail" target="_blank"><i class="fas fa-envelope"></i></a>
     </div>
 
     <!-- Header -->
     <header class="w3-container w3-center w3-padding-32" style="margin-top:46px;">
         <div><img src="{{ url_for('static', filename='githubPic.jpg') }}" alt="Me"
-                style="border-radius: 50%; float:inline-start;" height="250" width="200"></div>
+                style="border-radius: 10%; float:inline-start;" height="250" width="200"></div>
         <h1 class="typewriter"><b>Hassaan Abbasi</b></h1>
         <p><span class="w3-tag">Co-op Computer Science Student</span></p>
     </header>
-
-    <hr>
 
     <div class="w3-content" style="max-width:1100px">
 
         <!-- About entry -->
         <div class="w3-container w3-padding-32" id="about">
-            <div class="w3-card-2 w3-margin w3-light-blue">
+            <div class="w3-card-2 w3-margin w3-light-blue" id="Content">
                 <div class="w3-container w3-blue-gray">
                     <h2><b><i>About Me</i></b></h2>
                 </div>
-
-                <div class="w3-row">
+                <div class="w3-row w3-padding-large" style="font-size: 5.2mm; text-align: center; color: whitesmoke;">
                     <div class="w3-col m6 w3-padding-large">
-                        <p style="background-color: white; padding: 3mm;">Hello! My name is Hassaan, and I am an
+                        <p style="background-color: white; padding: 3mm; color: black; text-align: left;">
+                            Hello! My name is Hassaan, and I am an
                             undergraduate co-op Computer Science
                             student at Ryerson University. I can code in Python, Java, C, and HTML5/CSS3, but my
                             favorite language is Python. Feel free to check out my projects, resume, and contact
@@ -112,14 +249,14 @@
                         </p>
                     </div>
                     <div class="w3-col m6 w3-padding-large">
-                        <img src="" alt="me"
+                        <div style="padding: 3mm; background-color: lightyellow;">
+                            <img src="{{ url_for('static', filename='AGO.jpg') }}" alt="me"
                             style='height: 60%; width: 60%; display: block; margin-left: auto; margin-right: auto;'>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <hr>
 
         <!-- Projects entry -->
         <div class="w3-container w3-padding-32" id="project">
@@ -131,7 +268,7 @@
                 <div class="w3-row w3-padding-large" style="font-size: 5.2mm; text-align: center; color: whitesmoke;">
                     <div class="w3-col m6 w3-padding-large">
                         <div style="background-color:black;">
-                            <a href="https://github.com/HassaanAbbasi/Diqtionary">Diqtionary</a>
+                            <a href="https://github.com/HassaanAbbasi/Diqtionary" target="_blank"><b>Diqtionary</b></a>
                         </div>
 
                         <div style="padding: 3mm; background-color: white;">
@@ -142,11 +279,11 @@
 
                     <div class="w3-col m6 w3-padding-large">
                         <p style="background-color: white; padding: 3mm; color: black;">
-                            "Diqtionary" is a Python program that returns the definitions of words.
-                            The first version I released used a command line, while the second version 
+                            <b>"Diqtionary"</b> is a Python program that returns the definitions of words.
+                            The first version I released used a command line, while the second version
                             used a GUI made with tkinter. Diqtionary also has a spell check feature, which tries
-                            to correct mispelled words (ex. rainnn to rain).
-                            The inspiration behind this project was to give my 
+                            to correct misspelled words (ex. rainnn to rain).
+                            The inspiration behind this project was to give my
                             little brother a tool to help him with his weekly spelling and definitions homework.
                         </p>
                     </div>
@@ -155,7 +292,8 @@
                 <div class="w3-row w3-padding-large" style="font-size: 5.2mm; text-align: center; color: whitesmoke;">
                     <div class="w3-col m6 w3-padding-large">
                         <div style="background-color:black;">
-                            <a href="https://github.com/HassaanAbbasi/World-PokeStops-Map">World PokeStops Map</a>
+                            <a href="https://github.com/HassaanAbbasi/World-PokeStops-Map" target="_blank"><b>World
+                                    PokeStops Map</b></a>
                         </div>
 
                         <div style="padding: 3mm; background-color: white; height: 72mm;">
@@ -166,35 +304,55 @@
 
                     <div class="w3-col m6 w3-padding-large">
                         <p style="background-color: white; padding: 3mm; color: black;">
-                            "World PokeStops Map" is a Python program that maps interesting PokeStop locations.
+                            <b>"World PokeStops Map"</b> is a Python program that plots interesting PokeStop locations
+                            on a map generated with Folium.
+                            The locations are stored in a CSV file, which are read by a Python program to make an HTML
+                            document that contains the map.
+                            I wish to travel around the world more in the near future, so I made this project in hopes
+                            of finding cool places to visit
+                            while I play Pokemon GO abroad.
                         </p>
                     </div>
                 </div>
-
-                <div class="w3-padding-large" style="flex-wrap: wrap;" align="right">
-                    <button class="button" style="font-size: 4mm; background-color:cornflowerblue;"
-                        onclick="location.href='https://github.com/HassaanAbbasi'"><span>More Projects on my GitHub <i
-                                class="fab fa-github" style="font-size: 20px;"></i></span></button>
+                <div align="right" style="padding-right: 11mm; padding-bottom: 7mm;">
+                    <button class="button" style="font-size: 4mm; background-color:lightsalmon;"
+                        onclick="window.open('https://github.com/HassaanAbbasi', '_blank')"><span>More Projects on my
+                            GitHub <i class="fab fa-github" style="font-size: 20px;"></i></span></button>
                 </div>
             </div>
         </div>
 
-        <hr>
+        <div class="w3-container" style="text-align: left;">
+            <!-- Resume -->
+            <div class="w3-col l4 w3-content w3-padding-32" id="resume" style="width: 340px; float: left;">
 
-        <!-- Bottom -->
-        <div class="w3-col l4 w3-container w3-padding-32" id="connect" style="width: 340px">
+                <!-- Tags  -->
+                <div class="w3-card w3-margin w3-margin-top">
+                    <div class="w3-container w3-white">
+                        <h2 style="text-align: center;"><b>Resume</b></h2 s>
+                        <div class="w3-row grow" style="text-align: center;">
+                            <a href="{{ url_for('static', filename='Resume 2019-2020.pdf') }}" target="_blank"><i
+                                    class="fas fa-briefcase" style="font-size: 60px; padding: 2mm;"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <!-- Tags  -->
-            <div class="w3-card w3-margin w3-margin-top">
-                <div class="w3-container w3-white">
-                    <h2><b>Lets Connect!</b></h2>
-                    <div class="w3-row">
-                        <i class="fab fa-github myClickable" style="font-size: 60px; padding-right: 30px;"
-                            onclick="location.href='https://github.com/HassaanAbbasi'"></i>
-                        <i class="fab fa-linkedin myClickable" style="font-size: 60px; padding-right: 30px;"
-                            onclick="location.href='https://www.linkedin.com/in/hassaan-abbasi/'"></i>
-                        <i class="fas fa-envelope myClickable" style="font-size: 60px;"
-                        onclick="location.href='https://www.linkedin.com/in/hassaan-abbasi/'"></i>
+            <!-- Contact -->
+            <div class="w3-col l4 w3-content w3-padding-32" id="connect" style="width: 340px; float: right;">
+
+                <!-- Tags  -->
+                <div class="w3-card w3-margin w3-margin-top">
+                    <div class="w3-container w3-white">
+                        <h2 style="text-align: center;"><b>Lets Connect!</b></h2>
+                        <div class="w3-row" style="text-align: center;">
+                            <a href="https://github.com/HassaanAbbasi" target="_blank"><i class="fab fa-github grow"
+                                    style="font-size: 60px; padding: 2mm;"></i></a>
+                            <a href="https://www.linkedin.com/in/hassaan-abbasi/" target="_blank"><i
+                                    class="fab fa-linkedin grow" style="font-size: 60px; padding: 2mm;"></i></a>
+                            <a href="mailto:hassaan.abbasi@ryerson.ca"><i class="fas fa-envelope grow"
+                                    style="font-size: 60px; padding: 2mm;"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
