@@ -265,20 +265,20 @@
                     <h2><b><i>Projects</i></b></h2>
                 </div>
 
-                <div class="w3-row w3-padding-large" style="font-size: 5.2mm; text-align: center; color: whitesmoke;">
+                <div class="w3-row w3-padding-16" style="font-size: 5.2mm; text-align: center; color: whitesmoke;">
                     <div class="w3-col m6 w3-padding-large">
                         <div style="background-color:black;">
                             <a href="https://github.com/HassaanAbbasi/Diqtionary" target="_blank"><b>Diqtionary</b></a>
                         </div>
 
                         <div style="padding: 3mm; background-color: white;">
-                            <img src="{{ url_for('static', filename='dictionary.png') }}" alt="diqtionary logo"
-                                style='height: 60%; width: 60%; display: block; margin-left: auto; margin-right: auto;'>
+                            <a href="https://github.com/HassaanAbbasi/Diqtionary" target="_blank"><img src="{{ url_for('static', filename='dictionary.png') }}" alt="diqtionary logo"
+                                style='height: 60%; width: 60%; display: block; margin-left: auto; margin-right: auto;'></a>
                         </div>
                     </div>
 
                     <div class="w3-col m6 w3-padding-large">
-                        <p style="background-color: white; padding: 3mm; color: black;">
+                        <p style="background-color: white; padding: 2mm; color: black; text-align: left;">
                             <b>"Diqtionary"</b> is a Python program that returns the definitions of words.
                             The first version I released used a command line, while the second version
                             used a GUI made with tkinter. Diqtionary also has a spell check feature, which tries
@@ -289,7 +289,34 @@
                     </div>
 
                 </div>
-                <div class="w3-row w3-padding-large" style="font-size: 5.2mm; text-align: center; color: whitesmoke;">
+
+                <div class="w3-padding-16" style="font-size: 5.2mm; text-align: center; color: whitesmoke;">
+                    <div class="m6 w3-padding-16" style="width:80%;margin:auto;">
+                        <div style="background-color:black;">
+                            <a href="https://scotiabank-stock.herokuapp.com/" target="_blank"><b>Scotiabank Stocks Graph</b></a>
+                        </div>
+
+                        <div style="padding: 3mm; background-color: white; height: 72mm;">
+                            <a href="https://scotiabank-stock.herokuapp.com/" target="_blank"><img src="{{ url_for('static', filename='scotia.png') }}" alt="pokego mp"
+                                style='height: 100%; width: 100%; display: block; margin-left: auto; margin-right: auto;'></a>
+                        </div>
+                    </div>
+
+                    <div class="m6 w3-padding-large">
+                        <p style="background-color: white; padding: 2mm; color: black; text-align: left;">
+                            To explore the relationship between technology and finance, I developed 
+                            <b>"Scotiabank Stocks Graph"</b>. By using Pandas to collect the stock market
+                            data for Scotiabank Toronto, and Bokeh to create a candlestick chart for said data, I 
+                            enhanced my knowledge on how Python can be used to study the stock market. The graph I
+                            created shows daily stock data from January 1995 to the present. I chose to specifically
+                            plot Scotiabank Toronto's data because during my stock market research I found that it is an excellent
+                            long-term core holding. Also, Scotiabank is Canada's most international bank, which makes it all the
+                            more interesting to follow and study.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-row w3-padding-16" style="font-size: 5.2mm; text-align: center; color: whitesmoke;">
                     <div class="w3-col m6 w3-padding-large">
                         <div style="background-color:black;">
                             <a href="https://github.com/HassaanAbbasi/World-PokeStops-Map" target="_blank"><b>World
@@ -297,16 +324,17 @@
                         </div>
 
                         <div style="padding: 3mm; background-color: white; height: 72mm;">
-                            <img src="{{ url_for('static', filename='mapping.png') }}" alt="pokego mp"
-                                style='height: 100%; width: 100%; display: block; margin-left: auto; margin-right: auto;'>
+                            <a href="https://github.com/HassaanAbbasi/World-PokeStops-Map" target="_blank"><img src="{{ url_for('static', filename='mapping.png') }}" alt="pokego mp"
+                                style='height: 100%; width: 100%; display: block; margin-left: auto; margin-right: auto;'></a>
                         </div>
                     </div>
 
                     <div class="w3-col m6 w3-padding-large">
-                        <p style="background-color: white; padding: 3mm; color: black;">
-                            <b>"World PokeStops Map"</b> is a Python program that plots interesting PokeStop locations
-                            on a map generated with Folium.
-                            The locations are stored in a CSV file, which are read by a Python program to make an HTML
+                        <p style="background-color: white; padding: 2mm; color: black; text-align: left;">
+                            In order to store interesting PokeStop locations
+                            on a map, I created <b>"World PokeStops Map"</b>. Its a Python program that plots the aforementioned
+                            locations on a map generated with Folium.
+                            The locations are stored in a CSV file, which are read by a Python file to make an HTML
                             document that contains the map.
                             I wish to travel around the world more in the near future, so I made this project in hopes
                             of finding cool places to visit
@@ -314,6 +342,7 @@
                         </p>
                     </div>
                 </div>
+
                 <div align="right" style="padding-right: 11mm; padding-bottom: 7mm;">
                     <button class="button" style="font-size: 4mm; background-color:lightsalmon;"
                         onclick="window.open('https://github.com/HassaanAbbasi', '_blank')"><span>More Projects on my
