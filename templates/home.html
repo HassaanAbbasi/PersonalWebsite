@@ -4,6 +4,7 @@
 <head>
     <title>Hassaan Abbasi</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='main.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
@@ -186,6 +187,41 @@
             transform: translate(-50%, -50%);
             text-align: center;
         }
+
+        .image2 {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+        }
+
+        .middle2 {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+        }
+
+        .container:hover .image2 {
+        opacity: 0.3;
+        }
+
+        .container:hover .middle2 {
+        opacity: 1;
+        }
+
+        .text2 {
+        background-color: #cc978e;
+        color: black;
+        font-size: 16px;
+        padding: 16px 32px;
+        }
     </style>
 </head>
 
@@ -248,12 +284,9 @@
                             info below!
                         </p>
                     </div>
-                    <div class="w3-col m6 w3-padding-large">
-                        <div>
+                    <div class="w3-col m6">
                             <img src="{{ url_for('static', filename='AGO.jpg') }}" alt="me" style='height: 60%; 
-                            width: 60%; border-style:solid; border-color: #cc978e; border-width: 3mm; margin-top: -3px; 
-                            margin-left: -4px;'>
-                        </div>
+                            width: 60%; border-style:solid; border-color: #cc978e; border-width: 3mm;'>
                     </div>
                 </div>
             </div>
@@ -266,85 +299,72 @@
                     <h2><b><i>Projects</i></b></h2>
                 </div>
 
-                <div class="w3-row w3-padding-16" style="font-size: 5.2mm; text-align: center; color: whitesmoke;">
-                    <div class="w3-col m6 w3-padding-large">
-                        <div style="background-color:black;">
-                            <a href="https://github.com/HassaanAbbasi/Diqtionary" target="_blank"><b>Diqtionary</b></a>
+                <div class="w3-content w3-padding-large">
+                    <div class="w3-row-padding" style="padding-top:8mm">
+                        <div class="w3-col l6 m6 w3-margin-bottom">
+                            <div class="w3-center w3-black w3-padding-small"><a href="https://github.com/HassaanAbbasi/Diqtionary" target="_blank"><h3><u>Diqtionary</u></h3></a></div>
+                            <div class="w3-display-container container">
+                                <a href="https://github.com/HassaanAbbasi/Diqtionary" target="_blank">
+                                    <img src="{{ url_for('static', filename='diqt.png') }}" class="image2" alt="diqtionary logo" style="width:100%;">
+                                    <div class="middle2">
+                                        <div class="text2">
+                                            A desktop app that allows users to look up the definitions of words.
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-
-                        <div style="padding: 3mm; background-color: white;">
-                            <a href="https://github.com/HassaanAbbasi/Diqtionary" target="_blank"><img src="{{ url_for('static', filename='diqt.png') }}" alt="diqtionary logo"
-                                style='height: 85%; width: 85%; display: block; margin-left: auto; margin-right: auto;'></a>
+                        <div class="w3-col l6 m6 w3-margin-bottom">
+                            <div class="w3-center w3-black w3-padding-small"><a href="https://bmi-calculator-db.herokuapp.com/" target="_blank"><h3><u>BMI Calculator</u></h3></a></div>
+                            <div class="w3-display-container w3-center container">
+                                <a href="https://bmi-calculator-db.herokuapp.com/" target="_blank" class="image2" style="background-color: white;">
+                                    <img src="{{ url_for('static', filename='bmi.png') }}" alt="BMI_Chart" width="300px" height="150px">
+                                    <img src="https://images.agoramedia.com/everydayhealth/gcms/BMI-in-Adults-722x406.jpg" alt="BMI_Chart" width="100%">    
+                                </a>
+                                <a href="https://bmi-calculator-db.herokuapp.com/" target="_blank">
+                                <div class="middle2">
+                                    <div class="text2">
+                                            A web app that calculates the BMI of an individual, and sends them relevant statistics via email.
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="w3-col m6 w3-padding-large">
-                        <p style="background-color: white; padding: 2mm; color: black; text-align: left;">
-                            <b>"Diqtionary"</b> is a Python program that returns the definitions of words.
-                            The first version I released used a command line, while the second version
-                            used a GUI made with tkinter. Diqtionary also has a spell check feature, which tries
-                            to correct misspelled words (ex. rainnn to rain).
-                            The inspiration behind this project was to give my
-                            little brother a tool to help him with his weekly spelling and definitions homework.
-                        </p>
-                    </div>
-
-                </div>
-
-                <div class="w3-padding-16" style="font-size: 5.2mm; text-align: center; color: whitesmoke;">
-                    <div class="m6 w3-padding-16" style="width:95.3%;margin:auto;">
-                        <div style="background-color:black;">
-                            <a href="https://scotiabank-stock.herokuapp.com/" target="_blank"><b>Scotiabank Stocks Graph</b></a>
-                        </div>
-
-                        <div style="padding: 1mm; background-color: white; height: 72mm;">
-                            <a href="https://scotiabank-stock.herokuapp.com/" target="_blank"><img src="{{ url_for('static', filename='scotia.png') }}" alt="pokego mp"
-                                style='height: 100%; width: 100%; display: block; margin-left: auto; margin-right: auto; object-fit:fill;'></a>
-                        </div>
-                    </div>
-
-                    <div class="m6 w3-padding-large">
-                        <p style="background-color: white; padding: 2mm; color: black; text-align: left;">
-                            To explore the relationship between technology and finance, I developed 
-                            <b>"Scotiabank Stocks Graph"</b>. By using Pandas to collect the stock market
-                            data for Scotiabank Toronto, and Bokeh to create a candlestick chart for said data, I 
-                            enhanced my knowledge on how Python can be used to study the stock market. The graph I
-                            created shows daily stock data from January 1995 to the present. I chose to specifically
-                            plot Scotiabank Toronto's data because during my stock market research I found that it is an excellent
-                            long-term core holding. Also, Scotiabank is Canada's most international bank, which makes it all the
-                            more interesting to follow and study.
-                        </p>
                     </div>
                 </div>
 
-                <div class="w3-row w3-padding-16" style="font-size: 5.2mm; text-align: center; color: whitesmoke;">
-                    <div class="w3-col m6 w3-padding-large">
-                        <div style="background-color:black;">
-                            <a href="https://github.com/HassaanAbbasi/World-PokeStops-Map" target="_blank"><b>World
-                                    PokeStops Map</b></a>
+                <div class="w3-content w3-padding-large">
+                    <div class="w3-row-padding">
+                        <div class="w3-col l6 m6 w3-margin-bottom">
+                            <div class="w3-center w3-black w3-padding-small"><a href="https://scotiabank-stock.herokuapp.com/" target="_blank"><h3><u>Scotiabank Stocks Graph</u></h3></a></div>
+                            <div class="w3-display-container container">
+                                <a href="https://scotiabank-stock.herokuapp.com/" target="_blank">
+                                    <img src="{{ url_for('static', filename='scotia.png') }}" class="image2" alt="stocks" style="width:100%; height:177px">
+                                    <div class="middle2">
+                                        <div class="text2">
+                                            An online graph that allows users to study the present stock data of Scotiabank Toronto.
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-
-                        <div style="padding: 3mm; background-color: white; height: 72mm;">
-                            <a href="https://github.com/HassaanAbbasi/World-PokeStops-Map" target="_blank"><img src="{{ url_for('static', filename='mapping.png') }}" alt="pokego mp"
-                                style='height: 100%; width: 100%; display: block; margin-left: auto; margin-right: auto;'></a>
+                        <div class="w3-col l6 m6 w3-margin-bottom">
+                            <div class="w3-center w3-black w3-padding-small"><a href="https://github.com/HassaanAbbasi/World-PokeStops-Map" target="_blank"><h3><u>World-PokeStops-Map</u></h3></a></div>
+                            <div class="w3-display-container container">
+                                <a href="https://github.com/HassaanAbbasi/World-PokeStops-Map" target="_blank">
+                                    <img src="{{ url_for('static', filename='mapping.png') }}" class="image2" alt="poke map" style="width:100%;">
+                                    <div class="middle2">
+                                        <div class="text2">
+                                            A map that stores the locations of interesting PokeStops from around the world.
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="w3-col m6 w3-padding-large">
-                        <p style="background-color: white; padding: 2mm; color: black; text-align: left;">
-                            In order to store interesting PokeStop locations
-                            on a map, I created <b>"World PokeStops Map"</b>. Its a Python program that plots the aforementioned
-                            locations on a map generated with Folium.
-                            The locations are stored in a CSV file, which are read by a Python file to make an HTML
-                            document that contains the map.
-                            I wish to travel around the world more in the near future, so I made this project in hopes
-                            of finding cool places to visit
-                            while I play Pokemon GO abroad.
-                        </p>
                     </div>
                 </div>
 
-                <div align="right" style="padding-right: 11mm; padding-bottom: 7mm;">
+                <div class="w3-content w3-padding-large w3-center">
                     <button class="button" style="font-size: 4mm; background-color: #cc978e;"
                         onclick="window.open('https://github.com/HassaanAbbasi', '_blank')"><span style="display:inline-block;">More Projects on my
                             GitHub <br /> <i class="fab fa-github" style="font-size: 20px;"></i></span></button>
@@ -360,9 +380,9 @@
                 <div class="w3-card w3-margin w3-margin-top">
                     <div class="w3-container w3-white">
                         <h2 style="text-align: center;"><b>Resume</b></h2 s>
-                        <div class="w3-row grow" style="text-align: center;">
+                        <div class="w3-row" style="text-align: center;">
                             <a href="{{ url_for('static', filename='Resume 2019-2020.pdf') }}" target="_blank"><i
-                                    class="fas fa-briefcase" style="font-size: 60px; padding: 2mm;"></i></a>
+                                    class="fas fa-briefcase grow" style="font-size: 60px; padding: 2mm;"></i></a>
                         </div>
                     </div>
                 </div>
